@@ -63,43 +63,20 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Docs",
-            items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-            ],
+            label: "Instagram",
+            href: "https://instagram.com/cmu.scottylabs",
           },
           {
-            title: "Community",
-            items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
-            ],
+            label: "Facebook",
+            href: "https://www.facebook.com/ScootyLabs",
           },
           {
-            title: "More",
-            items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
-              },
-            ],
+            label: "Website",
+            href : "https://scottylabs.org/",
+          },
+          {
+            label: "Email Us",
+            href : "//hello@scottylabs.org"
           },
         ],
         copyright: `Made with ❤️ by ScottyLabs`,
