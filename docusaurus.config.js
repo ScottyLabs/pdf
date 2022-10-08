@@ -59,22 +59,16 @@ const config = {
       navbar: {
         title: "PDF",
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: "PDF Logo",
+          src: "img/wdw.png",
         },
         items: [
-          {
-            type: "doc",
-            docId: "intro",
-            position: "left",
-            label: "Tutorial",
-          },
-          { to: "/blog", label: "Blog", position: "left" },
-          {
-            href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
-            position: "right",
-          },
+          { to: "/content", label: "Content", position: "left" },
+          { to: "/design", label: "Design", position: "left" },
+          { to: "/html", label: "HTML", position: "left" },
+          { to: "/css", label: "CSS", position: "left" },
+          { to: "/javascript", label: "JavaScript", position: "left" },
+          { to: "/deployment", label: "Deployment", position: "left" },
         ],
       },
       footer: {
