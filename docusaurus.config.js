@@ -63,6 +63,10 @@ const config = {
         style: "dark",
         links: [
           {
+            label: "Website",
+            href : "https://scottylabs.org/",
+          },
+          {
             label: "Instagram",
             href: "https://instagram.com/cmu.scottylabs",
           },
@@ -71,11 +75,20 @@ const config = {
             href: "https://www.facebook.com/ScootyLabs",
           },
           {
-            label: "Website",
-            href : "https://scottylabs.org/",
+            label: "Slack",
+            href: "http://go.scottylabs.org/slack",
           },
           {
-            label: "Email Us",
+            label: "Medium",
+            href: "https://medium.com/tartanhacks",
+          },
+          {
+            label: "Tartan Connect",
+            href: "https://tartanconnect.cmu.edu/feeds?type=club&type_id=68253",
+          },
+
+          {
+            label: "Mailing List",
             href : "//hello@scottylabs.org"
           },
         ],
