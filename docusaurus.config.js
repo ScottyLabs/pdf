@@ -63,43 +63,33 @@ const config = {
         style: "dark",
         links: [
           {
-            title: "Docs",
-            items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-            ],
+            label: "Website",
+            href : "https://scottylabs.org/",
           },
           {
-            title: "Community",
-            items: [
-              {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
-              },
-            ],
+            label: "Instagram",
+            href: "https://instagram.com/cmu.scottylabs",
           },
           {
-            title: "More",
-            items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
-              {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
-              },
-            ],
+            label: "Facebook",
+            href: "https://www.facebook.com/ScootyLabs",
+          },
+          {
+            label: "Slack",
+            href: "http://go.scottylabs.org/slack",
+          },
+          {
+            label: "Medium",
+            href: "https://medium.com/tartanhacks",
+          },
+          {
+            label: "Tartan Connect",
+            href: "https://tartanconnect.cmu.edu/feeds?type=club&type_id=68253",
+          },
+
+          {
+            label: "Mailing List",
+            href : "//hello@scottylabs.org"
           },
         ],
         copyright: `Made with ❤️ by ScottyLabs`,
