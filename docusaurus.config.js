@@ -88,7 +88,7 @@ const config = {
           },
 
           {
-            label: "Mailing List",
+            label: "Email",
             href: "mailto://hello@scottylabs.org",
           },
         ],
