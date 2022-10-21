@@ -63,7 +63,7 @@ const config = {
         links: [
           {
             label: "Website",
-            href : "https://scottylabs.org/",
+            href: "https://scottylabs.org/",
           },
           {
             label: "Instagram",
@@ -87,8 +87,8 @@ const config = {
           },
 
           {
-            label: "Mailing List",
-            href : "//hello@scottylabs.org"
+            label: "Email",
+            href: "mailto://hello@scottylabs.org",
           },
         ],
         copyright: `Made with ❤️ by ScottyLabs`,
