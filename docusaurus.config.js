@@ -51,12 +51,12 @@ const config = {
           src: "img/wdw.png",
         },
         items: [
-          { to: "/content", label: "Content", position: "left" },
-          { to: "/design", label: "Design", position: "left" },
-          { to: "/html", label: "HTML", position: "left" },
-          { to: "/css", label: "CSS", position: "left" },
-          { to: "/javascript", label: "JavaScript", position: "left" },
-          { to: "/deployment", label: "Deployment", position: "left" },
+          { to: "/content", label: "Content ", position: "left", className: "content",},
+          { to: "/design", label: "Design", position: "left", className: "design",},
+          { to: "/html", label: "HTML", position: "left", className: "html", },
+          { to: "/css", label: "CSS", position: "left", className: "css", },
+          { to: "/javascript", label: "JavaScript", position: "left", className: "javascript", },
+          { to: "/deployment", label: "Deployment", position: "left", className: "deployment", },
         ],
       },
       footer: {
