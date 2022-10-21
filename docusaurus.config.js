@@ -48,7 +48,7 @@ const config = {
         title: "PDF",
         logo: {
           alt: "PDF Logo",
-          src: "img/wdw.png",
+          src: "img/pdf-logo.png",
         },
         items: [
           { to: "/content", label: "Content", position: "left" },
