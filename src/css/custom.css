@@ -81,7 +81,7 @@
 
 .content:before {
   content: "";
-  border-top: .15rem solid #56bac5;;
+  border-top: 1rem solid #56bac5;;
   display: flex;
   height: 15px;
   margin-top: -50%;
@@ -89,7 +89,7 @@
 
 .design:before {
   content: "";
-  border-top: .15rem solid #f49032;
+  border-top: .75rem solid #f49032;
   display: flex;
   height: 15px;
   margin-top: -50%;
@@ -97,7 +97,7 @@
 
 .html:before {
   content: "";
-  border-top: .15rem solid #db255e;
+  border-top: .5rem solid #db255e;
   display: flex;
   height: 15px;
   margin-top: -50%;
@@ -113,7 +113,7 @@
 
 .javascript:before {
   content: "";
-  border-top: .15rem solid #604794;;
+  border-top: 1.5rem solid #604794;;
   display: flex;
   height: 15px;
   margin-top: -50%;
@@ -121,7 +121,7 @@
 
 .deployment:before {
   content: "";
-  border-top: .15rem solid #db255e;
+  border-top: 1.9rem solid #db255e;
   display: flex;
   height: 15px;
   margin-top: -50%;
