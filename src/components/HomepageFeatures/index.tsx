@@ -10,32 +10,35 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Easy to Use",
-    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: "Focus on What Matters",
-    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: "Powered by React",
+    title: "A Personal Website for Everyone",
     Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Whether you want to learn a widely-applicable skill, applying for full time jobs, or somewhere
+        in between, our workshops are designed to provide you the skills to create a aesthetic and functional
+        personal website!
+      </>
+    ),
+  },
+  {
+    title: "Our End-to-End Ciriculum",
+    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+    description: (
+      <>
+        Our workshop focuses on the fundementals of web development with activities that
+        will walk you through the development and deployment of your personal website! We
+        have a beginner track, more focused on HTML and CSS, and an advanced track, more focused
+        on Javascript integration. At the end of the day, you will have a deployed website and a
+        good understanding of the basics of web development.
+      </>
+    ),
+  },
+  {
+    title: "Who we are",
+    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    description: (
+      <>
+        Portfolio Development Friday is run by <a href="https://www.scottylabs.org/">ScottyLabs</a>. We also run <a href="https://tartanhacks.com/">TartanHacks</a> (CMU’s largest software hackathon) and other educational events like <a href="https://crashcourse.scottylabs.org/">CrashCourse</a>.
       </>
     ),
   },
@@ -43,8 +46,8 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({ title, Svg, description }: FeatureItem) {
   return (
-    <div className={clsx("col col--4")}>
-      <div className="text--center">
+    <div className={clsx("text--center --10")}>
+      <div className="">
         <Svg className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
@@ -64,6 +67,45 @@ export default function HomepageFeatures(): JSX.Element {
             <Feature key={idx} {...props} />
           ))}
         </div>
+
+      <div className="text--center padding-horiz--md " style={{display: "flex", flexDirection: "column", alignItems: "center", whiteSpace: "nowrap"}}>
+        <h3>Schedule</h3>
+        <p><table className={styles.table}>
+          <tr>
+            <th>Session</th>
+            <th>Time</th>
+          </tr>
+          <tr>
+            <td><a href="/Content">Content</a></td>
+            <td>11am - 12pm</td>
+          </tr>
+          <tr>
+            <td><a href="/Design">Design</a></td>
+            <td>12pm - 1pm</td>
+          </tr>
+          <tr>
+            <td>Internship Panel w/ Food!</td>
+            <td>1pm - 2pm</td>
+          </tr>
+          <tr>
+            <td><a href="/Html">HTML</a> | <a href="/Javascript">Javascript</a></td>
+            <td>2pm - 3pm</td>
+          </tr>
+          <tr>
+            <td><a href="/Css">CSS</a> | <a href="/Javascript">Javascript</a></td>
+            <td>3pm - 4pm</td>
+          </tr>
+          <tr>
+            <td><a href="Deployment">Deployment</a></td>
+            <td>4pm - 5pm</td>
+          </tr>
+          <tr>
+            <td>Closing + Raffle</td>
+            <td>5pm - 5:30pm</td>
+          </tr>
+        </table></p>
+      </div>
+
       </div>
     </section>
   );
