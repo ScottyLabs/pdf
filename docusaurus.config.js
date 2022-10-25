@@ -7,7 +7,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Portfolio Development Friday",
-  tagline: "Build your own portfolio website!",
+  tagline: "ScottyLabs is hosting Portfolio Development Friday on October 28th, and we would love for you to attend! Portfolio Development Friday is an annual series of student-led workshops and talks that introduce you to web development centered around developing your own personal website. It is a great place to pick up new skills that you’ll be able to use in your projects, hackathons, and classes!",
   url: "https://pdf.scottylabs.org",
   baseUrl: "/",
   onBrokenLinks: "throw",
