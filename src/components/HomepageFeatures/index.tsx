@@ -17,14 +17,7 @@ const FeatureList: FeatureItem[] = [
         Whether you want to learn a widely-applicable skill, applying for full time jobs, or somewhere
         in between, our workshops are designed to provide you the skills to create a aesthetic and functional
         personal website!
-      </>
-    ),
-  },
-  {
-    title: "Our End-to-End Ciriculum",
-    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
-    description: (
-      <>
+
         Our workshop focuses on the fundementals of web development with activities that
         will walk you through the development and deployment of your personal website! We
         have a beginner track, more focused on HTML and CSS, and an advanced track, more focused
@@ -35,10 +28,10 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: "Who we are",
-    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
     description: (
       <>
-        Portfolio Development Friday is run by <a href="https://www.scottylabs.org/">ScottyLabs</a>. We also run <a href="https://tartanhacks.com/">TartanHacks</a> (CMU’s largest software hackathon) and other educational events like <a href="https://crashcourse.scottylabs.org/">CrashCourse</a>.
+        Portfolio Development Fair is run by <a href="https://www.scottylabs.org/">ScottyLabs</a>. We also run <a href="https://tartanhacks.com/">TartanHacks</a> (CMU’s largest software hackathon) and other educational events like <a href="https://crashcourse.scottylabs.org/">CrashCourse</a>.
       </>
     ),
   },
@@ -68,7 +61,8 @@ export default function HomepageFeatures(): JSX.Element {
           ))}
         </div>
 
-      <div className="text--center padding-horiz--md " style={{display: "flex", flexDirection: "column", alignItems: "center", whiteSpace: "nowrap"}}>
+      <div className="row" style={{display: "flex", flexDirection: "column", alignItems: "center", whiteSpace: "nowrap"}}>
+      <div className="text--center padding-horiz--md ">
         <h3>Schedule</h3>
         <p><table className={styles.table}>
           <tr>
@@ -104,6 +98,7 @@ export default function HomepageFeatures(): JSX.Element {
             <td>5pm - 5:30pm</td>
           </tr>
         </table></p>
+      </div>
       </div>
 
       </div>
