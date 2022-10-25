@@ -6,4 +6,4 @@ hide_table_of_contents: true
 
 # HTML
 
-Insert content here
+Coming soon!
