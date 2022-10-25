@@ -3,7 +3,16 @@
  * and scoped locally.
  */
 
+ .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
+}
+
 .heroBanner {
+  display: flex;
+  flex-direction: column;
   padding: 4rem 0;
   text-align: center;
   position: relative;
