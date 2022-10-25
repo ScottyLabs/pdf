@@ -45,10 +45,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "PDF",
         logo: {
           alt: "PDF Logo",
-          src: "img/wdw.png",
+          src: "img/pdf-logo.png",
         },
         items: [
           { to: "/content", label: "Content", position: "left" },
