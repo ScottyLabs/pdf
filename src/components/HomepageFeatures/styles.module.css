@@ -1,10 +1,15 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   width: 100%;
 }
 
+.featureItem {
+  text-align: center;
+  padding-inline: 15rem;  
+
+}
 .featureSvg {
   height: 200px;
   width: 200px;

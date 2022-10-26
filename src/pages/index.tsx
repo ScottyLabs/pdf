@@ -13,8 +13,8 @@ function HomepageHeader() {
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <img src={require("@site/static/img/pdf-logo.png").default} className={clsx("hero hero--primary", styles.center)}/>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <h1 className="hero__title" style={{paddingInline: "10rem"}}>{siteConfig.title}</h1>
+        <p className="hero__subtitle" style={{paddingInline: "10rem"}}>{siteConfig.tagline}</p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
