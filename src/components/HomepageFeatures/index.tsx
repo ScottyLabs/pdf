@@ -2,14 +2,19 @@ import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 
-type FeatureItem = {
+type SectionItem = {
   title: string;
   Svg?: React.ComponentType<React.ComponentProps<"svg">>;
   imgUrl?: string;
   description: JSX.Element;
 };
 
-const FeatureList: FeatureItem[] = [
+type ScheduleItem = {
+  time: string;
+  link: React.ReactNode;
+};
+
+const sectionList: SectionItem[] = [
   {
     title: "A Personal Website for Everyone",
     Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
@@ -50,18 +55,57 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-function Feature({ title, Svg, imgUrl, description }: FeatureItem) {
+const scheduleList: ScheduleItem[] = [
+  {
+    time: "11am - 12pm",
+    link: <a href="/content">Content</a>,
+  },
+  {
+    time: "12pm - 1pm",
+    link: <a href="/design">Design</a>,
+  },
+  {
+    time: "1pm - 2pm",
+    link: "Internship Panel w/ Food!",
+  },
+  {
+    time: "2pm - 3pm",
+    link: (
+      <>
+        <a href="/html">HTML</a> | <a href="/javascript">Javascript</a>
+      </>
+    ),
+  },
+  {
+    time: "3pm - 4pm",
+    link: (
+      <>
+        <a href="/css">CSS</a> | <a href="/javascript">Javascript</a>
+      </>
+    ),
+  },
+  {
+    time: "4pm - 5pm",
+    link: <a href="/deployment">Deployment</a>,
+  },
+  {
+    time: "5pm - 5:30pm",
+    link: "Closing + Raffle",
+  },
+];
+
+function Section({ title, Svg, imgUrl, description }: SectionItem) {
   const icon =
     Svg == null ? (
-      <img src={imgUrl} className={styles.featureImage} />
+      <img src={imgUrl} className={styles.sectionImg} />
     ) : (
-      <Svg className={styles.featureSvg} role="img" />
+      <Svg className={styles.sectionSvg} role="img" />
     );
   return (
-    <div className={clsx("text--center --10")}>
+    <div className={styles.section}>
       <div>{icon}</div>
-      <div className={styles.featureItem}>
-        <h3>{title}</h3>
+      <div className={styles.sectionDetails}>
+        <h2>{title}</h2>
         <p>{description}</p>
       </div>
     </div>
@@ -70,73 +114,30 @@ function Feature({ title, Svg, imgUrl, description }: FeatureItem) {
 
 function Schedule() {
   return (
-    <div className="text--center padding-horiz--md">
-      <h3>Schedule</h3>
-      <p>
-        <table className={styles.table}>
-          <tr>
-            <th>Session</th>
-            <th>Time</th>
-          </tr>
-          <tr>
-            <td>
-              <a href="/content">Content</a>
-            </td>
-            <td>11am - 12pm</td>
-          </tr>
-          <tr>
-            <td>
-              <a href="/design">Design</a>
-            </td>
-            <td>12pm - 1pm</td>
-          </tr>
-          <tr>
-            <td>Internship Panel w/ Food!</td>
-            <td>1pm - 2pm</td>
-          </tr>
-          <tr>
-            <td>
-              <a href="/html">HTML</a> | <a href="/javascript">Javascript</a>
-            </td>
-            <td>2pm - 3pm</td>
-          </tr>
-          <tr>
-            <td>
-              <a href="/css">CSS</a> | <a href="/javascript">Javascript</a>
-            </td>
-            <td>3pm - 4pm</td>
-          </tr>
-          <tr>
-            <td>
-              <a href="deployment">Deployment</a>
-            </td>
-            <td>4pm - 5pm</td>
-          </tr>
-          <tr>
-            <td>Closing + Raffle</td>
-            <td>5pm - 5:30pm</td>
-          </tr>
-        </table>
-      </p>
+    <div className={styles.scheduleSection}>
+      <h2>Schedule</h2>
+
+      <div className={styles.scheduleContainer}>
+        {scheduleList.map((scheduleItem) => (
+          <>
+            <div>{scheduleItem.time}</div>
+            <div>{scheduleItem.link}</div>
+          </>
+        ))}
+      </div>
     </div>
   );
 }
 
 export default function HomepageFeatures(): JSX.Element {
-  const [aboutFeature, clubFeature] = FeatureList;
+  const [aboutFeature, clubFeature] = sectionList;
 
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
-          <Feature {...aboutFeature} />
-        </div>
-        <div className={clsx("row", styles.centeredRow)}>
-          <Schedule />
-        </div>
-        <div className="row">
-          <Feature {...clubFeature} />
-        </div>
+        <Section {...aboutFeature} />
+        <Schedule />
+        <Section {...clubFeature} />
       </div>
     </section>
   );

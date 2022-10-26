@@ -1,43 +1,62 @@
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 1rem;
-  width: 100%;
+:root {
+  --section-margin: 24px auto 24px auto;
 }
 
-.centeredRow {
+.section {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin: 1rem 0 1rem 0;
-}
-
-@media screen and (min-width: 500px) {
-  .featureItem {
-    text-align: center;
-    padding-inline: 15rem;
-  }
+  justify-content: space-between;
+  gap: 30px;
+  margin: var(--section-margin);
+  width: 80%;
 }
 
 @media screen and (max-width: 996px) {
-  .titlePad {
-    padding-inline: 10rem;
+  .section {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .sectionDetails h2 {
+    text-align: center;
   }
 }
 
-.featureSvg {
+.sectionDetails {
+  width: 65%;
+}
+
+.sectionSvg {
   height: 200px;
   width: 200px;
 }
 
-.table {
-  margin-left: auto;
-  margin-right: auto;
-  align-items: center;
+.sectionImg {
+  height: 200px;
+  width: 200px;
+  padding: 36px;
+  border-radius: 50%;
 }
 
-.featureImage {
-  height: 128px;
-  width: 128px;
-  border-radius: 50%;
+.scheduleSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: var(--section-margin);
+}
+
+.scheduleContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  column-gap: 10%;
+}
+
+.scheduleContainer div:nth-child(even) {
+  text-align: left;
+}
+
+.scheduleContainer div:nth-child(odd) {
+  text-align: right;
 }
