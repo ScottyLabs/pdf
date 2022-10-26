@@ -5,9 +5,9 @@
   width: 100%;
 }
 
-@media screen {.featureItem {
+@media screen and (min-width: 500px) {.featureItem {
   text-align: center;
-  padding-inline: 20rem;  
+  padding-inline: 15rem;  
 }
 }
 
