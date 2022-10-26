@@ -5,9 +5,15 @@
   width: 100%;
 }
 
-.featureItem {
+@media screen {.featureItem {
   text-align: center;
-  padding-inline: 15rem;  
+  padding-inline: 20rem;  
+}
+}
+
+@media screen and (max-width: 996px) {.titlePad {
+  padding-inline: 10rem;
+}
 
 }
 .featureSvg {
