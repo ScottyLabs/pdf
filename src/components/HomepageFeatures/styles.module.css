@@ -5,8 +5,8 @@
 .section {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 30px;
+  justify-content: space-around;
+  gap: 10px;
   margin: var(--section-margin);
   width: 80%;
 }
@@ -50,7 +50,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
-  column-gap: 10%;
+  column-gap: 3em;
 }
 
 .scheduleContainer div:nth-child(even) {
