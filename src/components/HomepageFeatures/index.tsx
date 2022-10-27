@@ -10,7 +10,10 @@ type SectionItem = {
 };
 
 type ScheduleItem = {
+  start: number;
+  end: number;
   time: string;
+  room: string;
   link: React.ReactNode;
 };
 
@@ -57,18 +60,44 @@ const sectionList: SectionItem[] = [
 
 const scheduleList: ScheduleItem[] = [
   {
-    time: "11am - 12pm",
-    link: <a href="/content">Content</a>,
+    start: 0,
+    end: 0.5,
+    time: "11am - 11:30am",
+    link: "Opening Ceremony",
+    room: "Rashid (GHC 4401)",
   },
   {
+    start: 0.5,
+    end: 1,
+    time: "11:30am - 12pm",
+    link: (
+      <a href="https://www.cmu.edu/career/documents/quick-tips/quick_tips_portfolio_2018_final.pdf">
+        Content
+      </a>
+    ),
+    room: "Rashid (GHC 4401)",
+  },
+  {
+    start: 1,
+    end: 2,
     time: "12pm - 1pm",
-    link: <a href="/design">Design</a>,
+    link: (
+      <a href="https://docs.google.com/presentation/d/1xV7avlz5NORFawbT22E3difOhlb_zoeYBxE1oAD7jzU">
+        Design
+      </a>
+    ),
+    room: "Rashid (GHC 4401)",
   },
   {
+    start: 2,
+    end: 3,
     time: "1pm - 2pm",
     link: "Internship Panel w/ Food!",
+    room: "",
   },
   {
+    start: 3,
+    end: 4,
     time: "2pm - 3pm",
     link: (
       <>
@@ -87,39 +116,18 @@ const scheduleList: ScheduleItem[] = [
         >
           Lab
         </a>
-        ) |{" "}
-        <a
-          href="https://docs.google.com/presentation/d/1o52GP6IXR6gikbG0qYRst5qjhPLo_jPjwMm3rUx9-Kc"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Javascript
-        </a>{" "}
-        (
-        <a
-          href="https://drive.google.com/drive/folders/1D48ONCt-G9QsWrMR2Ki6uHQjFADMICAi?usp=share_link"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Lab
-        </a>
         )
       </>
     ),
+    room: "Rashid (GHC 4401)",
   },
   {
-    time: "3pm - 4pm",
+    start: 3,
+    end: 5,
+    time: "2pm - 4pm",
     link: (
       <>
         <a
-          href="https://docs.google.com/presentation/d/19VVkb2jXxVi6WsbaPCSpI_qn3a0comlNtPTIHpQ0l5s"
-          target="_blank"
-          rel="noreferrer"
-        >
-          CSS
-        </a>{" "}
-        |{" "}
-        <a
           href="https://docs.google.com/presentation/d/1o52GP6IXR6gikbG0qYRst5qjhPLo_jPjwMm3rUx9-Kc"
           target="_blank"
           rel="noreferrer"
@@ -137,8 +145,26 @@ const scheduleList: ScheduleItem[] = [
         )
       </>
     ),
+    room: "GHC 4307",
   },
   {
+    start: 4,
+    end: 5,
+    time: "3pm - 4pm",
+    link: (
+      <a
+        href="https://docs.google.com/presentation/d/19VVkb2jXxVi6WsbaPCSpI_qn3a0comlNtPTIHpQ0l5s"
+        target="_blank"
+        rel="noreferrer"
+      >
+        CSS
+      </a>
+    ),
+    room: "Rashid (GHC 4401)",
+  },
+  {
+    start: 5,
+    end: 6,
     time: "4pm - 5pm",
     link: (
       <a
@@ -149,12 +175,29 @@ const scheduleList: ScheduleItem[] = [
         Deployment
       </a>
     ),
+    room: "Rashid (GHC 4401)",
   },
   {
+    start: 6,
+    end: 6.5,
     time: "5pm - 5:30pm",
     link: "Closing + Raffle",
+    room: "Rashid (GHC 4401)",
   },
 ];
+
+function time24To12(hour: number): string {
+  const meridian = hour >= 12 ? "PM" : "AM";
+  const minute = (hour % 1) * 60;
+  let minuteStr = String(minute);
+  if (minute < 10) {
+    minuteStr = "0" + minute;
+  }
+
+  const baseHour = Math.floor(hour);
+  const hourStr = baseHour == 12 ? baseHour : baseHour % 12;
+  return `${hourStr}:${minuteStr} ${meridian}`;
+}
 
 function Section({ title, Svg, imgUrl, description }: SectionItem) {
   const icon =
@@ -175,17 +218,52 @@ function Section({ title, Svg, imgUrl, description }: SectionItem) {
 }
 
 function Schedule() {
+  const hours = [];
+  for (let i = 0; i < 14; i++) {
+    hours.push(i);
+  }
+
   return (
     <div className={styles.scheduleSection}>
       <h2>Schedule</h2>
 
       <div className={styles.scheduleContainer}>
-        {scheduleList.map((scheduleItem) => (
-          <>
-            <div>{scheduleItem.time}</div>
-            <div>{scheduleItem.link}</div>
-          </>
-        ))}
+        {hours.map((hour) => {
+          const startTime = 11;
+          const hourStr = time24To12(hour / 2 + startTime);
+          return (
+            <div
+              className={styles.timeCell}
+              style={{
+                gridRow: `${hour + 1} / span 1`,
+              }}
+            >
+              {hour % 2 == 0 || hour < 3 ? hourStr : ""}
+            </div>
+          );
+        })}
+        {scheduleList.map((scheduleItem, idx) => {
+          const { start, end, link, room } = scheduleItem;
+          let colStart = 2;
+          if (end - start == 2) {
+            colStart = 3;
+          }
+          const colSpan = 3 <= start && end <= 5 ? 1 : 2;
+          return (
+            <div
+              className={styles.scheduleCell}
+              key={idx}
+              style={{
+                gridRowStart: start * 2 + 1,
+                gridRowEnd: end * 2 + 1,
+                gridColumn: `${colStart} / span ${colSpan}`,
+              }}
+            >
+              <div className={styles.scheduleLink}>{link}</div>
+              <div className={styles.scheduleRoom}>{room}</div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

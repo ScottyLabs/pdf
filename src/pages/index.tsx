@@ -8,11 +8,11 @@ import styles from "./index.module.css";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+  const PdfSvg = require("@site/static/img/pdf-logo.svg").default;
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
-      <img
-        src={require("@site/static/img/pdf-logo.png").default}
-        className={clsx("hero hero--primary", styles.center, styles.heroImage)}
+      <PdfSvg
+        className={clsx("hero hero--primary", styles.center, styles.heroSvg)}
       />
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
@@ -24,7 +24,7 @@ function HomepageHeader() {
             target="_blank"
             rel="noreferrer"
           >
-            Sign Up
+            Check in
           </Link>
         </div>
       </div>
