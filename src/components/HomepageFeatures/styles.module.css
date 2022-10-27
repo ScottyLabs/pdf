@@ -51,7 +51,6 @@
   width: 40%;
   font-weight: 500;
   box-sizing: border-box;
-  /* grid-template-columns: 1fr 2fr 2fr; */
 }
 
 @media screen and (max-width: 480px) {
