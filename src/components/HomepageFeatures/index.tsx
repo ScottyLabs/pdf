@@ -63,21 +63,29 @@ const scheduleList: ScheduleItem[] = [
     start: 0,
     end: 0.5,
     time: "11am - 11:30am",
-    link: <a href="/content">Opening Ceremony</a>,
+    link: "Opening Ceremony",
     room: "Rashid (GHC 4401)",
   },
   {
     start: 0.5,
     end: 1,
     time: "11:30am - 12pm",
-    link: <a href="/content">Content</a>,
+    link: (
+      <a href="https://www.cmu.edu/career/documents/quick-tips/quick_tips_portfolio_2018_final.pdf">
+        Content
+      </a>
+    ),
     room: "Rashid (GHC 4401)",
   },
   {
     start: 1,
     end: 2,
     time: "12pm - 1pm",
-    link: <a href="/design">Design</a>,
+    link: (
+      <a href="https://docs.google.com/presentation/d/1xV7avlz5NORFawbT22E3difOhlb_zoeYBxE1oAD7jzU">
+        Design
+      </a>
+    ),
     room: "Rashid (GHC 4401)",
   },
   {

@@ -49,14 +49,7 @@ const config = {
           alt: "PDF Logo",
           src: "img/pdf-logo.png",
         },
-        items: [
-          { to: "/content", label: "Content", position: "left" },
-          { to: "/design", label: "Design", position: "left" },
-          { to: "/html", label: "HTML", position: "left" },
-          { to: "/css", label: "CSS", position: "left" },
-          { to: "/javascript", label: "JavaScript", position: "left" },
-          { to: "/deployment", label: "Deployment", position: "left" },
-        ],
+        items: [{ to: "/setup", label: "Setup", position: "left" }],
       },
       footer: {
         style: "dark",

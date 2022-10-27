@@ -24,7 +24,7 @@ function HomepageHeader() {
             target="_blank"
             rel="noreferrer"
           >
-            Sign Up
+            Check in
           </Link>
         </div>
       </div>
