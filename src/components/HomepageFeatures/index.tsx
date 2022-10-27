@@ -2,68 +2,204 @@ import React from "react";
 import clsx from "clsx";
 import styles from "./styles.module.css";
 
-type FeatureItem = {
+type SectionItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<"svg">>;
+  Svg?: React.ComponentType<React.ComponentProps<"svg">>;
+  imgUrl?: string;
   description: JSX.Element;
 };
 
-const FeatureList: FeatureItem[] = [
+type ScheduleItem = {
+  time: string;
+  link: React.ReactNode;
+};
+
+const sectionList: SectionItem[] = [
   {
-    title: "Easy to Use",
-    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: "Focus on What Matters",
-    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: "Powered by React",
+    title: "A Personal Website for Everyone",
     Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Portfolio Development Fair is an annual series of student-led workshops
+        and talks that introduce you to web development centered around
+        developing your own personal website. It is a great place to pick up new
+        skills that you'll be able to use in your projects, hackathons, and
+        classes!
+      </>
+    ),
+  },
+  {
+    title: "Who we are",
+    imgUrl: require("@site/static/img/scottylabs.png").default,
+    description: (
+      <>
+        Portfolio Development Fair is run by{" "}
+        <a href="https://www.scottylabs.org/" target="_blank" rel="noreferrer">
+          ScottyLabs
+        </a>
+        . We also run{" "}
+        <a href="https://tartanhacks.com/" target="_blank" rel="noreferrer">
+          TartanHacks
+        </a>{" "}
+        (CMU’s largest software hackathon) and other educational events like{" "}
+        <a
+          href="https://crashcourse.scottylabs.org/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          CrashCourse
+        </a>
+        .
       </>
     ),
   },
 ];
 
-function Feature({ title, Svg, description }: FeatureItem) {
+const scheduleList: ScheduleItem[] = [
+  {
+    time: "11am - 12pm",
+    link: <a href="/content">Content</a>,
+  },
+  {
+    time: "12pm - 1pm",
+    link: <a href="/design">Design</a>,
+  },
+  {
+    time: "1pm - 2pm",
+    link: "Internship Panel w/ Food!",
+  },
+  {
+    time: "2pm - 3pm",
+    link: (
+      <>
+        <a
+          href="https://docs.google.com/presentation/d/1xrW_YdaKAFbzqXDVXpLs-LEE970b10jmDgudJ1XyRRU"
+          target="_blank"
+          rel="noreferrer"
+        >
+          HTML
+        </a>{" "}
+        (
+        <a
+          href="https://drive.google.com/drive/folders/1MthLDpoYMN5RaF0xMqQdp-niN4qAi1Ra?usp=share_link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Lab
+        </a>
+        ) |{" "}
+        <a
+          href="https://docs.google.com/presentation/d/1o52GP6IXR6gikbG0qYRst5qjhPLo_jPjwMm3rUx9-Kc"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Javascript
+        </a>{" "}
+        (
+        <a
+          href="https://drive.google.com/drive/folders/1D48ONCt-G9QsWrMR2Ki6uHQjFADMICAi?usp=share_link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Lab
+        </a>
+        )
+      </>
+    ),
+  },
+  {
+    time: "3pm - 4pm",
+    link: (
+      <>
+        <a
+          href="https://docs.google.com/presentation/d/19VVkb2jXxVi6WsbaPCSpI_qn3a0comlNtPTIHpQ0l5s"
+          target="_blank"
+          rel="noreferrer"
+        >
+          CSS
+        </a>{" "}
+        |{" "}
+        <a
+          href="https://docs.google.com/presentation/d/1o52GP6IXR6gikbG0qYRst5qjhPLo_jPjwMm3rUx9-Kc"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Javascript
+        </a>{" "}
+        (
+        <a
+          href="https://drive.google.com/drive/folders/1D48ONCt-G9QsWrMR2Ki6uHQjFADMICAi?usp=share_link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Lab
+        </a>
+        )
+      </>
+    ),
+  },
+  {
+    time: "4pm - 5pm",
+    link: (
+      <a
+        href="https://docs.google.com/presentation/d/1ROqdAK8_i0HK3BJ330gUbV915o2C-qtZ-dKvg0O6aqU/edit#slide=id.p"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Deployment
+      </a>
+    ),
+  },
+  {
+    time: "5pm - 5:30pm",
+    link: "Closing + Raffle",
+  },
+];
+
+function Section({ title, Svg, imgUrl, description }: SectionItem) {
+  const icon =
+    Svg == null ? (
+      <img src={imgUrl} className={styles.sectionImg} />
+    ) : (
+      <Svg className={styles.sectionSvg} role="img" />
+    );
   return (
-    <div className={clsx("col col--4")}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
+    <div className={styles.section}>
+      <div>{icon}</div>
+      <div className={styles.sectionDetails}>
+        <h2>{title}</h2>
         <p>{description}</p>
       </div>
     </div>
   );
 }
 
+function Schedule() {
+  return (
+    <div className={styles.scheduleSection}>
+      <h2>Schedule</h2>
+
+      <div className={styles.scheduleContainer}>
+        {scheduleList.map((scheduleItem) => (
+          <>
+            <div>{scheduleItem.time}</div>
+            <div>{scheduleItem.link}</div>
+          </>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function HomepageFeatures(): JSX.Element {
+  const [aboutFeature, clubFeature] = sectionList;
+
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
-        </div>
+        <Section {...aboutFeature} />
+        <Schedule />
+        <Section {...clubFeature} />
       </div>
     </section>
   );

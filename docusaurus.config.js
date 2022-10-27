@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Portfolio Development Friday",
+  title: "Portfolio Development Fair",
   tagline: "Build your own portfolio website!",
   url: "https://pdf.scottylabs.org",
   baseUrl: "/",
