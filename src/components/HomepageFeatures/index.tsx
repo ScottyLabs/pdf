@@ -72,7 +72,38 @@ const scheduleList: ScheduleItem[] = [
     time: "2pm - 3pm",
     link: (
       <>
-        <a href="/html">HTML</a> | <a href="/javascript">Javascript</a>
+        <a
+          href="https://docs.google.com/presentation/d/1xrW_YdaKAFbzqXDVXpLs-LEE970b10jmDgudJ1XyRRU"
+          target="_blank"
+          rel="noreferrer"
+        >
+          HTML
+        </a>{" "}
+        (
+        <a
+          href="https://drive.google.com/drive/folders/1MthLDpoYMN5RaF0xMqQdp-niN4qAi1Ra?usp=share_link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Lab
+        </a>
+        ) |{" "}
+        <a
+          href="https://docs.google.com/presentation/d/1o52GP6IXR6gikbG0qYRst5qjhPLo_jPjwMm3rUx9-Kc"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Javascript
+        </a>{" "}
+        (
+        <a
+          href="https://drive.google.com/drive/folders/1D48ONCt-G9QsWrMR2Ki6uHQjFADMICAi?usp=share_link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Lab
+        </a>
+        )
       </>
     ),
   },
@@ -80,13 +111,44 @@ const scheduleList: ScheduleItem[] = [
     time: "3pm - 4pm",
     link: (
       <>
-        <a href="/css">CSS</a> | <a href="/javascript">Javascript</a>
+        <a
+          href="https://docs.google.com/presentation/d/19VVkb2jXxVi6WsbaPCSpI_qn3a0comlNtPTIHpQ0l5s"
+          target="_blank"
+          rel="noreferrer"
+        >
+          CSS
+        </a>{" "}
+        |{" "}
+        <a
+          href="https://docs.google.com/presentation/d/1o52GP6IXR6gikbG0qYRst5qjhPLo_jPjwMm3rUx9-Kc"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Javascript
+        </a>{" "}
+        (
+        <a
+          href="https://drive.google.com/drive/folders/1D48ONCt-G9QsWrMR2Ki6uHQjFADMICAi?usp=share_link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Lab
+        </a>
+        )
       </>
     ),
   },
   {
     time: "4pm - 5pm",
-    link: <a href="/deployment">Deployment</a>,
+    link: (
+      <a
+        href="https://docs.google.com/presentation/d/1ROqdAK8_i0HK3BJ330gUbV915o2C-qtZ-dKvg0O6aqU/edit#slide=id.p"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Deployment
+      </a>
+    ),
   },
   {
     time: "5pm - 5:30pm",
