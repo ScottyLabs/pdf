@@ -13,6 +13,7 @@ type ScheduleItem = {
   start: number;
   end: number;
   time: string;
+  room: string;
   link: React.ReactNode;
 };
 
@@ -63,24 +64,28 @@ const scheduleList: ScheduleItem[] = [
     end: 0.5,
     time: "11am - 11:30am",
     link: <a href="/content">Opening Ceremony</a>,
+    room: "Rashid (GHC 4401)",
   },
   {
     start: 0.5,
     end: 1,
     time: "11:30am - 12pm",
     link: <a href="/content">Content</a>,
+    room: "Rashid (GHC 4401)",
   },
   {
     start: 1,
     end: 2,
     time: "12pm - 1pm",
     link: <a href="/design">Design</a>,
+    room: "Rashid (GHC 4401)",
   },
   {
     start: 2,
     end: 3,
     time: "1pm - 2pm",
     link: "Internship Panel w/ Food!",
+    room: "",
   },
   {
     start: 3,
@@ -106,6 +111,7 @@ const scheduleList: ScheduleItem[] = [
         )
       </>
     ),
+    room: "Rashid (GHC 4401)",
   },
   {
     start: 3,
@@ -131,6 +137,7 @@ const scheduleList: ScheduleItem[] = [
         )
       </>
     ),
+    room: "GHC 4307",
   },
   {
     start: 4,
@@ -145,6 +152,7 @@ const scheduleList: ScheduleItem[] = [
         CSS
       </a>
     ),
+    room: "Rashid (GHC 4401)",
   },
   {
     start: 5,
@@ -159,12 +167,14 @@ const scheduleList: ScheduleItem[] = [
         Deployment
       </a>
     ),
+    room: "Rashid (GHC 4401)",
   },
   {
     start: 6,
     end: 6.5,
     time: "5pm - 5:30pm",
     link: "Closing + Raffle",
+    room: "Rashid (GHC 4401)",
   },
 ];
 
@@ -225,7 +235,7 @@ function Schedule() {
           );
         })}
         {scheduleList.map((scheduleItem, idx) => {
-          const { start, end, link } = scheduleItem;
+          const { start, end, link, room } = scheduleItem;
           let colStart = 2;
           if (end - start == 2) {
             colStart = 3;
@@ -241,7 +251,8 @@ function Schedule() {
                 gridColumn: `${colStart} / span ${colSpan}`,
               }}
             >
-              <div>{link}</div>
+              <div className={styles.scheduleLink}>{link}</div>
+              <div className={styles.scheduleRoom}>{room}</div>
             </div>
           );
         })}
