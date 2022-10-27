@@ -3,7 +3,7 @@
  * and scoped locally.
  */
 
- .center {
+.center {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -23,10 +23,15 @@
   .heroBanner {
     padding: 2rem;
   }
+
+  .heroImage {
+    width: 50%;
+  }
 }
 
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 3rem;
 }
